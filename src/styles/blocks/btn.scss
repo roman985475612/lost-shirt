@@ -1,0 +1,14 @@
+.btn {
+    text-transform: uppercase;
+    font-family: $title-font;
+    font-size: 24px;
+    padding: 2px 30px;
+    background: $primary-mail-color;
+    color: $secondary-mail-color;
+    display: inline-block;
+
+    &:hover {
+        background: $color-red;
+        color: #fff;
+    }
+}

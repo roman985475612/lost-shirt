@@ -1,0 +1,33 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    font: 16px / 1.42 "Roboto", Arial, sans-serif;
+    color: $primary-mail-color;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+
+    & > li {
+        list-style: none;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    overflow: hidden;
+    min-width: 1310px;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1300px;
+}

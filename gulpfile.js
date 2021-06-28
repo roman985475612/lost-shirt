@@ -35,13 +35,18 @@ task('copy:html', () => {
         .pipe(reload({stream: true}))
 })
 
+task('copy:fonts', () => {
+    return src(`${SRC_PATH}/fonts/**/*`)
+        .pipe(dest(`${DIST_PATH}/fonts`))
+})
+
 task('styles', () => {
     return src([...STYLES_LIBS, `${SRC_PATH}/styles/main.scss`])
         .pipe(gulpIf(env === 'dev', sourcemaps.init()))
         .pipe(concat('main.min.scss'))
         .pipe(sassGlob())
         .pipe(sass().on('error', sass.logError))
-        .pipe(px2rem())
+        // .pipe(px2rem())
         .pipe(gulpIf(env === 'prod', autoprefixer({
             browsers: ['last 2 versions'],
             cascade: true
@@ -117,7 +122,7 @@ task('watch', () => {
 task('default', 
     series(
         'clean', 
-        parallel('copy:html', 'styles', 'scripts'), 
+        parallel('copy:html', 'styles', 'scripts', 'copy:fonts'), 
         parallel('watch', 'server')
     )
 )
@@ -125,6 +130,6 @@ task('default',
 task('build', 
     series(
         'clean', 
-        parallel('copy:html', 'styles', 'scripts', 'images', 'imgToWebp', 'icons')
+        parallel('copy:html', 'styles', 'scripts', 'images', 'imgToWebp', 'icons', 'copy:fonts')
     ) 
 )

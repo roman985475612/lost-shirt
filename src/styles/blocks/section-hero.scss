@@ -2,4 +2,82 @@
     height: 100vh;
     min-height: 650px;
     background: url('../images/bg.webp') center center / cover no-repeat;
+    position: relative;
+    margin-bottom: 130px;
+
+    .header {
+        width: 1290px;
+        margin: 0 auto;
+        padding-top: 27px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mail {
+        text-decoration: none;
+        text-align: center;
+        color: inherit;
+
+        &__title {
+            margin-bottom: 3px;
+        }
+
+        &__content {
+            background-color: $primary-mail-color;
+            color: $secondary-mail-color;
+            padding: 5px 10px;
+        }
+    }
+
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);        
+        width: 1140px;
+        height: 72%;
+    }
+
+    .fade-slider {
+        width: 100%;
+        height: 100%;
+        
+        &__item {
+            background: url('../images/slider_pic_1.webp') center center / contain no-repeat;
+            height: 100%;
+        }
+
+        &__text {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-130%, -70%);    
+        }
+    }
+
+    .lined-text {
+        font-family: "Alegrea", Arial, sans-serif;
+        color: #fff;
+        font-size: 63px;
+        line-height: 1;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        &__word {
+            margin-top: -7px;
+            padding: 0 17px 8px;
+            background: #000;
+
+            &:nth-child(2n) {
+                margin-left: 8px;
+            }
+
+            &--color-yellow {
+                color: $secondary-mail-color;
+            }
+        }
+    }
 }
