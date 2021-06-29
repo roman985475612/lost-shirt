@@ -40,6 +40,11 @@ task('copy:fonts', () => {
         .pipe(dest(`${DIST_PATH}/fonts`))
 })
 
+task('copy:icons', () => {
+    return src(`${SRC_PATH}/icons/**/*`)
+        .pipe(dest(`${DIST_PATH}/icons`))
+})
+
 task('styles', () => {
     return src([...STYLES_LIBS, `${SRC_PATH}/styles/main.scss`])
         .pipe(gulpIf(env === 'dev', sourcemaps.init()))
@@ -84,7 +89,7 @@ task('images', () => {
 })
 
 task('icons', () => {
-    return src(`${SRC_PATH}/images/icons/*.svg`)
+    return src(`${SRC_PATH}/icons/*.svg`)
         .pipe(svgo({
             plugins: [
                 {
@@ -101,7 +106,7 @@ task('icons', () => {
                 }
             }
         }))
-        .pipe(dest(`${DIST_PATH}/images/icons`))
+        .pipe(dest(`${DIST_PATH}/images/i`))
 })
 
 task('server', () => {
@@ -122,7 +127,7 @@ task('watch', () => {
 task('default', 
     series(
         'clean', 
-        parallel('copy:html', 'styles', 'scripts', 'copy:fonts'), 
+        parallel('copy:html', 'styles', 'scripts', 'copy:fonts', 'copy:icons'), 
         parallel('watch', 'server')
     )
 )
@@ -130,6 +135,6 @@ task('default',
 task('build', 
     series(
         'clean', 
-        parallel('copy:html', 'styles', 'scripts', 'images', 'imgToWebp', 'icons', 'copy:fonts')
+        parallel('copy:html', 'styles', 'scripts', 'images', 'imgToWebp', 'copy:icons', 'copy:fonts')
     ) 
 )

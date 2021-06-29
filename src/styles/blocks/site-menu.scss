@@ -1,0 +1,53 @@
+.site-menu {
+    margin-bottom: 115px;
+
+    &__sections {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__col {
+        margin-right: 20px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 24px;
+        font-family: $title-font;
+        font-size: 24px;
+        font-weight: bold;
+        color: $primary-mail-color;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        margin-bottom: 30px;
+        font-size: 15px;
+        color: $primary-mail-color;
+    }
+
+    &__text-row {
+        margin-bottom: 5px;
+        display: block;
+        color: inherit;
+    }
+
+    &__list {
+    }
+
+    &__item {
+        margin-bottom: 15px;
+    }
+
+    &__link {
+        font-size: 15px;
+        color: $primary-mail-color;
+
+        &:hover {
+            color: $color-red;
+        }
+    }
+}

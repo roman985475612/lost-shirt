@@ -1,0 +1,72 @@
+.collections {
+    margin-bottom: 135px;
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        margin-right: 30px;
+        overflow: hidden;
+        min-height: 474px;
+        flex: 1;
+        background: url('../images/pattern.webp') center center / 100%;
+        position: relative;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 176%;
+            width: 60%;
+            top: -17%;
+            left: -18%;
+            background: center center / contain no-repeat;
+
+        }
+
+        &--type-girls::before {
+            background-image: url('../images/collection_woman.webp');
+            top: -31%;
+            width: 80%;
+            left: -25%;
+        }
+
+        &--type-guys::before {
+            background-image: url('../images/collection_man.webp');
+        }
+    }
+
+    &__link {
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        height: 100%;
+        padding: 74px 13% 74px 44%;
+        text-decoration: none;
+        color: inherit;
+        font-size: 15px;
+
+        &:hover .btn {
+            color: #fff;
+            background: $color-red;
+        }
+    }
+
+    &__title {
+        font-family: $title-font;
+        font-size: 70px;font-weight: bold;
+        line-height: 1;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 11px;
+    }
+
+    &__desc {
+        margin-bottom: 28px;
+    }
+}
