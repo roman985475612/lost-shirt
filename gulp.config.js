@@ -5,7 +5,7 @@ module.exports = {
         './node_modules/normalize.css/normalize.css'
     ],
     JS_LIBS: [
-        'node_modules/jquery/dist/jquery.js'
+        './node_modules/isotope-layout/dist/isotope.pkgd.min.js'
     ],
 
 }

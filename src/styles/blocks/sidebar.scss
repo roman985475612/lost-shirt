@@ -1,0 +1,75 @@
+.sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 75px;
+    background: $primary-mail-color;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: width .3s;
+
+    &--opened {
+        width: 325px;
+        padding: 0 3% 0 4%;
+
+        .sidebar__header {
+            display: flex;
+        }
+
+        .sidebar__hamburger {
+            display: none;
+        }
+
+        .sidebar__menu {
+            left: 0;
+            width: 100%;
+            text-align: center;
+            transition-delay: .1s;
+        }
+    }
+
+    &__header {
+        position: absolute;
+        top: 29px;
+        left: 0;
+        right: 0;
+        display: none;
+        justify-content: center;
+    }
+
+    &__hamburger {
+        display: block;
+        position: absolute;
+        top: 27px;
+        left: 50%;
+        transform: translate(-50%)
+    }
+
+    &__hamburger-icon {
+        width: 29px;
+        height: 29px;
+        fill: $secondary-mail-color;
+    }
+
+    &__close {
+        position: absolute;
+        top: -4px;
+        right: 23px;
+    }
+
+    &__close-icon {
+        width: 29px;
+        height: 29px;
+        fill: $secondary-mail-color;
+    }
+
+    &__menu {
+        position: absolute;
+        left: -400px;
+        transition: left .3s;
+    }
+}

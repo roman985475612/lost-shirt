@@ -1,0 +1,21 @@
+.side-menu {
+
+    &__list {
+
+    }
+
+    &__item {
+        margin-bottom: 20px;
+    }
+
+    &__link {
+        font-size: 20px;
+        font-family: $title-font;
+        color: $secondary-mail-color;
+        text-transform: uppercase;
+
+        &:hover {
+            color: $color-red;
+        }
+    }
+}

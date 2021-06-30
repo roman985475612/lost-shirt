@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="1440">
     <link rel="stylesheet" href="css/main.min.css">
     <title>Lost Shirt | Main page</title>
 </head>
@@ -22,9 +21,10 @@
                 <div class="mail__content">info@example.com</div>
             </a>
         </header>
+
         <div class="hero__content">
-            <div class="fade-slider">
-                <div class="fade-slider__item">
+            <ul class="fade-slider">
+                <li class="fade-slider__item fade-slider__item--style-thirts fade-slider__item--visible">
                     <div class="fade-slider__text">
                         <h1 class="lined-text">
                             <div class="lined-text__word">три</div>
@@ -33,25 +33,89 @@
                             <div class="lined-text__word lined-text__word--color-yellow">двух</div>
                         </h1>    
                     </div>
-                </div>
-            </div>    
+                </li>
+                <li class="fade-slider__item fade-slider__item--style-games">
+                    <div class="fade-slider__text">
+                        <h1 class="lined-text">
+                            <div class="lined-text__word">любимые игры</div>
+                            <div class="lined-text__word lined-text__word--color-yellow">на лучших футболках</div>
+                        </h1>    
+                    </div>
+                </li>
+                <li class="fade-slider__item fade-slider__item--style-presents">
+                    <div class="fade-slider__text">
+                        <h1 class="lined-text">
+                            <div class="lined-text__word">подарки</div>
+                            <div class="lined-text__word lined-text__word--color-yellow">для любымых</div>
+                        </h1>    
+                    </div>
+                </li>
+            </ul>    
         </div>
+
+        <aside class="sidebar">
+            <a href="#" class="sidebar__hamburger">
+                <svg class="sidebar__hamburger-icon">
+                    <use xlink:href="./icons/icons-sprite.svg#bars"></use>
+                </svg>
+            </a>
+            <div class="sidebar__header">
+                <a href="#" class="logo">
+                    <picture>
+                        <source srcset="./images/logo.webp">
+                        <img src="./images/logo.png" alt="" class="logo_image">
+                    </picture>
+                </a>
+                <a href="#" class="sidebar__close">
+                    <svg class="sidebar__close-icon">
+                        <use xlink:href="./icons/icons-sprite.svg#cross"></use>
+                    </svg>
+                </a>
+            </div>
+            <nav class="side-menu sidebar__menu">
+                <ul class="side-menu__list">
+                    <li class="side-menu__item">
+                        <a href="#" class="side-menu__link">детская коллекция</a>
+                    </li>
+                    <li class="side-menu__item">
+                        <a href="#" class="side-menu__link">женская коллекция</a>
+                    </li>
+                    <li class="side-menu__item">
+                        <a href="#" class="side-menu__link">мужская коллекция</a>
+                    </li>
+                    <li class="side-menu__item">
+                        <a href="#" class="side-menu__link">популярные принты</a>
+                    </li>
+                    <li class="side-menu__item">
+                        <a href="#" class="side-menu__link">новые принты</a>
+                    </li>
+                    <li class="side-menu__item">
+                        <a href="#" class="side-menu__link">специальные предложения</a>
+                    </li>
+                    <li class="side-menu__item">
+                        <a href="#" class="side-menu__link">скоро в продаже</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- /.sidebar -->
     </section>
     <!-- /.hero -->    
 
     <section class="products">
         <div class="container">
             <ul class="filter">
-                <li class="filter__item filter__item--active"><a href="#" class="filter__link">популярное</a></li>
-                <li class="filter__item"><a href="#" class="filter__link">новинки</a></li>
-                <li class="filter__item"><a href="#" class="filter__link">бестселлеры</a></li>
-                <li class="filter__item"><a href="#" class="filter__link">специальные предложения</a></li>
-                <li class="filter__item"><a href="#" class="filter__link">скоро в продаже</a></li>
+                <li class="filter__item filter__item--active"><a href="#" class="filter__link" data-filter="all">все предложения</a></li>
+                <li class="filter__item"><a href="#" class="filter__link" data-filter="popular">популярное</a></li>
+                <li class="filter__item"><a href="#" class="filter__link" data-filter="new">новинки</a></li>
+                <li class="filter__item"><a href="#" class="filter__link" data-filter="bestsellers">бестселлеры</a></li>
+                <li class="filter__item"><a href="#" class="filter__link" data-filter="specials">специальные предложения</a></li>
+                <li class="filter__item"><a href="#" class="filter__link" data-filter="soon">скоро в продаже</a></li>
             </ul>
             <!-- /.filter -->
             
             <ul class="products__list">
-                <li class="products__item">
+                <li class="products__item all specials bestsellers">
                     <div class="products__price">
                         <div class="products__price-amount">1 800</div>
                     </div>
@@ -68,7 +132,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="products__item">
+                <li class="products__item all new soon">
                     <div class="products__price">
                         <div class="products__price-amount">1 800</div>
                     </div>
@@ -85,7 +149,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="products__item products__item--color-black products__item--size-double">
+                <li class="products__item all products__item--color-black products__item--size-double popular">
                     <div class="products__price">
                         <div class="products__price-amount">1 800</div>
                     </div>
@@ -102,7 +166,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="products__item products__item--color-black products__item--size-double">
+                <li class="products__item all products__item--color-black products__item--size-double popular">
                     <div class="products__price">
                         <div class="products__price-amount">1 800</div>
                     </div>
@@ -119,7 +183,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="products__item">
+                <li class="products__item all bestsellers soon">
                     <div class="products__price">
                         <div class="products__price-amount">1 800</div>
                     </div>
@@ -136,7 +200,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="products__item">
+                <li class="products__item all bestsellers">
                     <div class="products__price">
                         <div class="products__price-amount">1 800</div>
                     </div>
